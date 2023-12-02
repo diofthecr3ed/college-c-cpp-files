@@ -1,0 +1,41 @@
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+
+char ** createArrayOfPointers(void)
+{
+	int numberOfNames;
+	scanf(" %d", &numberOfNames);
+	
+	char ** arrayOfPointers = malloc(numberOfNames*sizeof(char *));
+
+	for (int i = 0 ; i < numberOfNames ; ++i)
+	{
+		int numberOfCharacters;
+		scanf("%d", &numberOfCharacters);
+		
+		char * name = malloc((numberOfCharacters+1)*sizeof(char));
+		scanf("%s", name);
+		
+       		arrayOfPointers[i] = name;		
+	}
+
+
+
+	return arrayOfPointers;
+}
+
+void printArrayOfPointers(char ** arrayOfPointers)
+{
+	for (int x = 0 ; x < 5 ; ++x)
+	{
+		printf("%s \n", arrayOfPointers[x]);
+	}
+}
+
+int main (void)
+{
+	char ** arrayOfPointers = createArrayOfPointers();
+	printArrayOfPointers(arrayOfPointers);
+	return 0;
+}
