@@ -1,12 +1,9 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 void wordReverse(char word[], int len);
-
 int main(void)
 {
 	char word[] = "PlakshaUniversity";
-	int len = strlen(word);
 	wordReverse(word, -1);
 	return 0;
 }
