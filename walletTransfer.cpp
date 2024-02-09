@@ -23,9 +23,9 @@ class Admin{
 };
 int Wallet::count = 0;
 
-Wallet::Wallet(){count++;}
-Wallet::Wallet(double money){balance = money;count++;}
-Wallet::Wallet(Wallet & w){balance = w.balance;count++;}
+Wallet::Wallet(){id = count;count++;}
+Wallet::Wallet(double money){balance = money; id = count; count++;}
+Wallet::Wallet(Wallet & w){balance = w.balance; id = count; count++;}
 double Wallet::getBalance(){return balance;}
 double Wallet::topUp(double amount){balance += amount; return balance;}
 
