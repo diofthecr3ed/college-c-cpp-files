@@ -73,10 +73,12 @@ void tree::print(node *root_node) // displaying the nodes (in order)
 {
         if (root_node!=nullptr){
         print(root_node ->lchild);
-        cout<<root_node->data<<endl;
+        cout<<root_node->data<<endl; // base condition
         print(root_node -> rchild);
         }
 }
+
+
 
 node* tree::insert_node(node* root, int data) // inserting nodes!
 {

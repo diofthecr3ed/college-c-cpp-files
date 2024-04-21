@@ -60,19 +60,35 @@ void deleteNode(Node * &head, int val){
     }
     Node * popped = temp->next;
     temp->next = temp->next->next;
+    cout<<"Deleted node was: " << popped->data<<endl;
     delete popped;
+}
+bool findNode(Node* head, int val) {
+    Node* temp = head;
+    while (temp != nullptr) {
+        if (temp->data == val)
+            return true;
+        temp = temp->next;
+    }
+    return false;
 }
 
 int main(void){
     Node * head = NULL;
     insertAtEnd(head, 1);
-    insertAtEnd(head, 1);
-    insertAtEnd(head, 1);
-    insertAtEnd(head, 1);
-    insertAtHead(head, 2);
-    insertAtIndex(head, 3, 3);
+    insertAtEnd(head, 2);
+    insertAtEnd(head, 3);
+    insertAtEnd(head, 4);
+    insertAtEnd(head, 5);
     print(head);
-    deleteNode(head,1);
+    insertAtIndex(head, 100, 3);
     print(head);
+    deleteNode(head,5);
+    print(head);
+    if(findNode(head,4)){
+        cout<<"Node found"<<endl;
+    }
+
+
     return 0;
 }
